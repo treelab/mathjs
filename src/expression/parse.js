@@ -390,7 +390,7 @@ export const createParse = /* #__PURE__ */ factory(name, dependencies, ({
       if (currentCharacter(state) === '%') {
         const subExpression = state.expression.substr(state.index + 1)
         const nextNotBlankCharacter = subExpression ? subExpression.trim()[0] : ''
-        if (parse.isDigit(nextNotBlankCharacter)) {
+        if (parse.isDigit(nextNotBlankCharacter) || nextNotBlankCharacter === '(') {
           return
         }
         state.token += currentCharacter(state)
