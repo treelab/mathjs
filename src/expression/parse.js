@@ -152,6 +152,7 @@ export const createParse = /* #__PURE__ */ factory(name, dependencies, ({
 
     '==': true,
     '!=': true,
+    '<>': true,
     '<': true,
     '>': true,
     '<=': true,
@@ -864,6 +865,7 @@ export const createParse = /* #__PURE__ */ factory(name, dependencies, ({
     const operators = {
       '==': 'equal',
       '!=': 'unequal',
+      '<>': 'unequal',
       '<': 'smaller',
       '>': 'larger',
       '<=': 'smallerEq',

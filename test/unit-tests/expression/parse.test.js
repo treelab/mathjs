@@ -1565,6 +1565,12 @@ describe('parse', function () {
       assert.deepStrictEqual(parseAndEval('[2,3] != [2,4]'), math.matrix([false, true]))
     })
 
+    it('should parse unequal <>', function () {
+      assert.strictEqual(parseAndEval('2 <> 3'), true)
+      assert.strictEqual(parseAndEval('2 <> 2'), false)
+      assert.deepStrictEqual(parseAndEval('[2,3] <> [2,4]'), math.matrix([false, true]))
+    })
+
     it('should parse conditional expression a ? b : c', function () {
       assert.strictEqual(parseAndEval('2 ? true : false'), true)
       assert.strictEqual(parseAndEval('0 ? true : false'), false)
